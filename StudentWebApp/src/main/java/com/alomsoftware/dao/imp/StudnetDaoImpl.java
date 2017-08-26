@@ -23,9 +23,10 @@ public class StudnetDaoImpl implements StudentDao {
 	public void edit(Student student) {
 		session.getCurrentSession().update(student);
 	}
-
+	
+	@Override
 	public void delete(int studentId) {
-		 session.getCurrentSession().delete(getStudent(studentId) );
+		session.getCurrentSession().delete(getStudent(studentId) );		
 	}
 
 	@Override
@@ -34,9 +35,10 @@ public class StudnetDaoImpl implements StudentDao {
 	}
 
 	@Override
-	public List getAllStudnet() {
-		 
+	public List getAllStudnet() {		 
 		return session.getCurrentSession().createQuery("from Student").list();
 	}
+
+	
 
 }
